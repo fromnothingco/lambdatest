@@ -1,0 +1,28 @@
+{
+  "name": "lambdatest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "start": "sls offline --skipCacheInvalidation",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fromnothingco/lambdatest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fromnothingco/lambdatest/issues"
+  },
+  "homepage": "https://github.com/fromnothingco/lambdatest#readme",
+  "dependencies": {
+    "mongodb": "^3.1.13",
+    "mongoose": "^5.4.17"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10",
+    "serverless-offline": "^4.8.1"
+  }
+}

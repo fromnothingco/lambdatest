@@ -1,9 +1,13 @@
-
 service: cornerservice # NOTE: update this with your service name
 
 provider:
   name: aws
   runtime: nodejs8.10
+  environment:
+    ATLASURI: ${file(./env.yml):ATLASURI}
+
+plugins:
+  - serverless-offline
 
 functions:
   hello:
@@ -12,5 +16,11 @@ functions:
      - http:
          path: test
          method: get
-         authorizer:
-          arn: arn:aws:cognito-idp:us-east-2:349847673753:userpool/us-east-2_7rZyQ4s7p
+  hellopost:
+    handler: handler.hellopost
+    events:
+     - http:
+         path: test
+         method: post
+        #  authorizer:
+        #   arn: arn:aws:cognito-idp:us-east-2:349847673753:userpool/us-east-2_7rZyQ4s7p
